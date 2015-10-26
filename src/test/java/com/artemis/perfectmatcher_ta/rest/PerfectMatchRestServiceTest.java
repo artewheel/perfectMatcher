@@ -37,7 +37,7 @@ public class PerfectMatchRestServiceTest {
     @After
     public void tearDown() {
     }
-
+/*
    
     @Test
     public void testPerfectMatcher() throws Exception {
@@ -76,5 +76,5 @@ public class PerfectMatchRestServiceTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+    */
 }

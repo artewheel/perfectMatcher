@@ -42,7 +42,7 @@ public class Boy {
 	}
         
         @XmlElement
-	public String getmate() {
+	public String getMate() {
 		return this.mate;
 	}
 

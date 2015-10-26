@@ -62,31 +62,27 @@ public class PerfectMatchRestService {
     @Produces("application/json")
     public Response PerfectMatcher(@PathParam("param") String name)
     {
-        
             boy.setName(name); 
             Numberizer(boy.getName());
+            Nummatcher(boy.getCode());
             return Response.status(200).entity(boy).build(); 
     }
     
     @BadgerFish	
     @GET
     @Path("/name/{myname:[A-Z]{1}+[a-z]*}")
-    @Produces("application/json")
-    public Response Numberizer(@PathParam("myname") String name) {
-            boy.setCode(stringToAscii(name));  
-            Nummatcher(boy.getCode());
-           return Response.status(200).entity(boy).build();     
+    public int Numberizer(@PathParam("myname") String name) {
+            boy.setCode(stringToAscii(name));      
+            return boy.getCode();
         }
 
     @BadgerFish	
     @GET
     @Path("code/{mycode:[0-9]*}")
-   // @Consumes("application/json")
-    @Produces("application/json")
-    public Response Nummatcher(@PathParam("mycode") int code) //throws MyApplicationException
+    public String Nummatcher(@PathParam("mycode") int code)
     {
         boy.setMate(selectGirl(code));
-        return Response.status(200).entity(boy).build(); 
+        return boy.getMate();
     }
     
 }
