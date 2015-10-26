@@ -14,6 +14,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.Produces;
 //import javax.ws.rs.Consumes;
 import org.jboss.resteasy.annotations.providers.jaxb.json.BadgerFish;
+import utils.Helper;
 
 //http://localhost:8084/perfectmatcher_TA/rest/
 @Path("/app")
@@ -21,41 +22,9 @@ import org.jboss.resteasy.annotations.providers.jaxb.json.BadgerFish;
 public class PerfectMatchRestService {
 
     Boy boy=new Boy();
-
-    public int stringToAscii(String name) {
-        if (name == null) {
-            return 0;
-        }
-        int len = name.length();
-        int count = 0;
-        Character[] array = new Character[len];
-        for (int i = 0; i < len; i++) {
-            array[i] = new Character(name.charAt(i));
-            count += name.charAt(i);
-          //  count += word;
-        }
-        return count;
-    }
-
-    public String selectGirl(int code) {
-        String girl;
-      
-        if (code < 800) {
-            girl = "Maria.";
-        } else if ((code > 799) & (code < 1200)) {
-            girl = "Elena.";
-        } else if ((code > 1199) & (code < 1600)) {
-            girl = "Marina.";
-        } else  {
-            girl = "Nancy.";
-        }
-        
-        return girl;
-
-    }
-
-   
+    Helper help = new Helper();
     
+        
     @BadgerFish	
     @GET
     @Path("/{param:[A-Z]{1}+[a-z]*}") 
@@ -72,7 +41,7 @@ public class PerfectMatchRestService {
     @GET
     @Path("/name/{myname:[A-Z]{1}+[a-z]*}")
     public int Numberizer(@PathParam("myname") String name) {
-            boy.setCode(stringToAscii(name));      
+            boy.setCode(help.stringToAscii(name));      
             return boy.getCode();
         }
 
@@ -80,7 +49,7 @@ public class PerfectMatchRestService {
     @Path("code/{mycode:[0-9]*}")
     public String Nummatcher(@PathParam("mycode") int code)
     {
-        boy.setMate(selectGirl(code));
+        boy.setMate(help.selectGirl(code));
         return boy.getMate();
     }
     
