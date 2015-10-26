@@ -60,8 +60,9 @@ public class PerfectMatchRestService {
     @GET
     @Path("/{param:[A-Z]{1}+[a-z]*}") 
     @Produces("application/json")
-    public Response PerfectMatcher(@PathParam("param") String name) throws MyApplicationException
+    public Response PerfectMatcher(@PathParam("param") String name)
     {
+        
             boy.setName(name); 
             Numberizer(boy.getName());
             return Response.status(200).entity(boy).build(); 
