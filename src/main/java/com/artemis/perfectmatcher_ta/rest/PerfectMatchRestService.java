@@ -5,7 +5,7 @@
  */
 package com.artemis.perfectmatcher_ta.rest;
 
-import com.artemis.perfectmatcher_ta.exception.MyApplicationException;
+//import com.artemis.perfectmatcher_ta.exception.MyApplicationException;
 import com.artemis.perfectmatcher_ta.model.Boy;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -68,6 +68,7 @@ public class PerfectMatchRestService {
             return boy; 
     }
     	
+    
     @GET
     @Path("/name/{myname:[A-Z]{1}+[a-z]*}")
     public int Numberizer(@PathParam("myname") String name) {

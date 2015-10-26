@@ -15,12 +15,12 @@
 		<param-value>/rest</param-value>
 	</context-param>
 
-        
+        <!--
         <context-param>
         <param-name>resteasy.providers</param-name>
         <param-value>com.artemis.perfectmatcher_ta.exception.MyApplicationExceptionHandler</param-value>
         </context-param>
-        
+        -->
         
 	<listener>
 		<listener-class>
