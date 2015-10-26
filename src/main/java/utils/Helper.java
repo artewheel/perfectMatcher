@@ -19,7 +19,6 @@ public class Helper{
         for (int i = 0; i < len; i++) {
             array[i] = new Character(name.charAt(i));
             count += name.charAt(i);
-          //  count += word;
         }
         return count;
     }
@@ -28,13 +27,13 @@ public class Helper{
         String girl;
       
         if (code < 800) {
-            girl = "Maria.";
+            girl = "Maria";
         } else if ((code > 799) & (code < 1200)) {
-            girl = "Elena.";
+            girl = "Elena";
         } else if ((code > 1199) & (code < 1600)) {
-            girl = "Marina.";
+            girl = "Marina";
         } else  {
-            girl = "Nancy.";
+            girl = "Nancy";
         }  
         return girl;
     }

@@ -25,16 +25,15 @@ public class PerfectMatchRestService {
     Helper help = new Helper();
     
         
-    @BadgerFish	
+    	
     @GET
     @Path("/{param:[A-Z]{1}+[a-z]*}") 
-    @Produces("application/json")
-    public Boy PerfectMatcher(@PathParam("param") String name)
+    public String PerfectMatcher(@PathParam("param") String name)
     {
             boy.setName(name); 
             Numberizer(boy.getName());
             Nummatcher(boy.getCode());
-            return boy; 
+            return boy.getMate(); 
     }
     	
     
@@ -53,4 +52,15 @@ public class PerfectMatchRestService {
         return boy.getMate();
     }
     
+    @BadgerFish	
+    @GET
+    @Path("/json/{param:[A-Z]{1}+[a-z]*}") 
+    @Produces("application/json")
+    public Boy PerfectMatcherJson (@PathParam("param") String name)
+    {
+            boy.setName(name); 
+            Numberizer(boy.getName());
+            Nummatcher(boy.getCode());
+            return boy; 
+    }   
 }
