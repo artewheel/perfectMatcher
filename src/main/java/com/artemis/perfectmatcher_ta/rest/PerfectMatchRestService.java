@@ -40,14 +40,14 @@ public class PerfectMatchRestService {
     public String selectGirl(int code) {
         String girl;
       
-        if ((code > 0) & (code < 800)) {
-            girl = "Maria!";
+        if (code < 800) {
+            girl = "Maria.";
         } else if ((code > 799) & (code < 1200)) {
-            girl = "Elena!";
+            girl = "Elena.";
         } else if ((code > 1199) & (code < 1600)) {
-            girl = "Marina!";
+            girl = "Marina.";
         } else  {
-            girl = "Nancy!";
+            girl = "Nancy.";
         }
         
         return girl;
@@ -60,15 +60,14 @@ public class PerfectMatchRestService {
     @GET
     @Path("/{param:[A-Z]{1}+[a-z]*}") 
     @Produces("application/json")
-    public Response PerfectMatcher(@PathParam("param") String name)
+    public Boy PerfectMatcher(@PathParam("param") String name)
     {
             boy.setName(name); 
             Numberizer(boy.getName());
             Nummatcher(boy.getCode());
-            return Response.status(200).entity(boy).build(); 
+            return boy; 
     }
-    
-    @BadgerFish	
+    	
     @GET
     @Path("/name/{myname:[A-Z]{1}+[a-z]*}")
     public int Numberizer(@PathParam("myname") String name) {
@@ -76,7 +75,6 @@ public class PerfectMatchRestService {
             return boy.getCode();
         }
 
-    @BadgerFish	
     @GET
     @Path("code/{mycode:[0-9]*}")
     public String Nummatcher(@PathParam("mycode") int code)
