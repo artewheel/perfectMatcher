@@ -72,9 +72,6 @@ public class PerfectMatchRestService {
     @Path("/name/{myname:[A-Z]{1}+[a-z]*}")
     @Produces("application/json")
     public Response Numberizer(@PathParam("myname") String name) {
-        if (boy.getName()==null){
-            boy.setName(name);
-        }
             boy.setCode(stringToAscii(name));  
             Nummatcher(boy.getCode());
            return Response.status(200).entity(boy).build();     
@@ -87,9 +84,6 @@ public class PerfectMatchRestService {
     @Produces("application/json")
     public Response Nummatcher(@PathParam("mycode") int code) //throws MyApplicationException
     {
-        if (boy.getCode()==0){
-            boy.setCode(code);
-        }
         boy.setMate(selectGirl(code));
         return Response.status(200).entity(boy).build(); 
     }
