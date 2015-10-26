@@ -5,7 +5,7 @@
  */
 package com.artemis.perfectmatcher_ta.rest;
 
-import javax.ws.rs.core.Response;
+import com.artemis.perfectmatcher_ta.model.Boy;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -37,15 +37,15 @@ public class PerfectMatchRestServiceTest {
     @After
     public void tearDown() {
     }
-/*
-   
+
+    /*
     @Test
-    public void testPerfectMatcher() throws Exception {
+    public void testPerfectMatcher() {
         System.out.println("PerfectMatcher");
         String name = "";
         PerfectMatchRestService instance = new PerfectMatchRestService();
-        Response expResult = null;
-        Response result = instance.PerfectMatcher(name);
+        String expResult = "";
+        String result = instance.PerfectMatcher(name);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -55,10 +55,10 @@ public class PerfectMatchRestServiceTest {
     @Test
     public void testNumberizer() {
         System.out.println("Numberizer");
-        String name = "";
+        String name = "John";
         PerfectMatchRestService instance = new PerfectMatchRestService();
-        Response expResult = null;
-        Response result = instance.Numberizer(name);
+        int expResult = 0;
+        int result = instance.Numberizer(name);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -70,8 +70,21 @@ public class PerfectMatchRestServiceTest {
         System.out.println("Nummatcher");
         int code = 0;
         PerfectMatchRestService instance = new PerfectMatchRestService();
-        Response expResult = null;
-        Response result = instance.Nummatcher(code);
+        String expResult = "";
+        String result = instance.Nummatcher(code);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    
+    @Test
+    public void testPerfectMatcherJson() {
+        System.out.println("PerfectMatcherJson");
+        String name = "";
+        PerfectMatchRestService instance = new PerfectMatchRestService();
+        Boy expResult = null;
+        Boy result = instance.PerfectMatcherJson(name);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

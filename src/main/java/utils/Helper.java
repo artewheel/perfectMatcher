@@ -7,17 +7,14 @@ package utils;
 
 public class Helper{
 
-    Character[] array;
 
     public int stringToAscii(String name) {
         if (name == null) {
             return 0;
         }
-        int len = name.length();
+        int length = name.length();
         int count = 0;
-        array = new Character[len];
-        for (int i = 0; i < len; i++) {
-            array[i] = new Character(name.charAt(i));
+        for (int i = 0; i < length; i++) {
             count += name.charAt(i);
         }
         return count;
@@ -37,8 +34,4 @@ public class Helper{
         }  
         return girl;
     }
-    
-    
-    
-    
 }
