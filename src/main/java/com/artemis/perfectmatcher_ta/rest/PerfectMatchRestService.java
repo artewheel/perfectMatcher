@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.Produces;
 //import javax.ws.rs.Consumes;
 import org.jboss.resteasy.annotations.providers.jaxb.json.BadgerFish;
-import utils.Helper;
+import com.artemis.perfectmatcher_ta.utils.Helper;
 
 //http://localhost:8084/perfectmatcher_TA/rest/
 @Path("/app")
