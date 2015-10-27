@@ -26,28 +26,28 @@ public class PerfectMatchRestService {
     
     @GET
     @Path("/{param:[A-Z]{1}+[a-z]*}") 
-    public String PerfectMatcher(@PathParam("param") String name)
+    public Response PerfectMatcher(@PathParam("param") String name)
     {
             boy.setName(name); 
             Numberizer(boy.getName());
             Nummatcher(boy.getCode());
-            return boy.getMate(); 
+            return Response.status(200).entity(boy.getMate()).build();
     }
     	
     
     @GET
     @Path("/name/{myname:[A-Z]{1}+[a-z]*}")
-    public int Numberizer(@PathParam("myname") String name) {
+    public Response Numberizer(@PathParam("myname") String name) {
             boy.setCode(help.stringToAscii(name));      
-            return boy.getCode();
+            return Response.status(200).entity(boy.getCode()).build();
         }
 
     @GET
     @Path("code/{mycode:[0-9]*}")
-    public String Nummatcher(@PathParam("mycode") int code)
+    public Response Nummatcher(@PathParam("mycode") int code)
     {
         boy.setMate(help.selectGirl(code));
-        return boy.getMate();
+        return Response.status(200).entity(boy.getMate()).build();
     }
     
     @BadgerFish	
