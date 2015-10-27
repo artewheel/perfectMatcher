@@ -21,8 +21,8 @@ import com.artemis.perfectmatcher_ta.utils.Helper;
 
 public class PerfectMatchRestService {
 
-    Boy boy=new Boy();
-    Helper help = new Helper();
+    Boy boy=new Boy(); 
+    Helper help = new Helper(); //supporting methods I'm using here
     
     @GET
     @Path("/{param:[A-Z]{1}+[a-z]*}") 
