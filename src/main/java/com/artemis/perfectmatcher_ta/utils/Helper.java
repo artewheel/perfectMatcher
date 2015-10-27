@@ -8,6 +8,7 @@ package com.artemis.perfectmatcher_ta.utils;
 public class Helper{
 
 
+    //name is always a character string of at least one char
     public int stringToAscii(String name) {
         if (name == null) {
             return 0;
@@ -20,18 +21,22 @@ public class Helper{
         return count;
     }
     
+    //code is only allowed to be a positive integer
     public String selectGirl(int code) {
         String girl;
       
-        if (code < 800) {
+        if ((code>=0) && (code < 800)) {
             girl = "Maria";
-        } else if ((code > 799) & (code < 1200)) {
+        } else if ((code > 799) && (code < 1200)) {
             girl = "Elena";
-        } else if ((code > 1199) & (code < 1600)) {
+        } else if ((code > 1199) && (code < 1600)) {
             girl = "Marina";
-        } else  {
+        } else if (code > 1599) {
             girl = "Nancy";
         }  
+        else{ //never gets here
+            girl = "Unknown";
+        }
         return girl;
     }
 }

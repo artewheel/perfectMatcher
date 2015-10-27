@@ -5,7 +5,7 @@
  */
 package com.artemis.perfectmatcher_ta.rest;
 
-//import com.artemis.perfectmatcher_ta.exception.MyApplicationException;
+
 import com.artemis.perfectmatcher_ta.model.Boy;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -24,8 +24,6 @@ public class PerfectMatchRestService {
     Boy boy=new Boy();
     Helper help = new Helper();
     
-        
-    	
     @GET
     @Path("/{param:[A-Z]{1}+[a-z]*}") 
     public String PerfectMatcher(@PathParam("param") String name)
